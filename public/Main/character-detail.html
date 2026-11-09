@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Captain Valerie Sol - Character Profile | Fan Hub Plus</title>
+  <meta name="description" content="Fan Hub Plus - The unified fandom discovery platform for Anime, Gaming, Movies, TV, K-Pop, Comics, Manga and Cosplay.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6.5.1 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Accessibility & Preferences Bar -->
+  <div class="top-accessibility-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-fandom cosplay" style="font-size: 0.68rem; padding: 0.2rem 0.6rem;">FANDOM UNIVERSE</span>
+        <span class="text-muted d-none d-md-inline" style="font-size: 0.8rem;">Explore the largest community discovery platform for Anime, Gaming & Pop Culture</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <!-- Font Size Controls -->
+        <div class="d-flex align-items-center gap-1" title="Accessibility Font Size Controls">
+          <span class="text-muted me-1" style="font-size: 0.75rem;">Font:</span>
+          <button class="font-btn-toggle" data-size="sm" title="Small Font">A-</button>
+          <button class="font-btn-toggle active" data-size="md" title="Default Font">A</button>
+          <button class="font-btn-toggle" data-size="lg" title="Large Font">A+</button>
+        </div>
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+          <span class="d-none d-sm-inline">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg fanhub-navbar">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <span>Fan Hub<span class="brand-text-plus">+</span></span>
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#fanhubNavbarNav" aria-controls="fanhubNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars-staggered text-emerald-primary fs-4"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="fanhubNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="characters.html">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="articles.html">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="media.html">Media</a>
+          </li>
+          <!-- More Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="merchandise.html"><i class="fa-solid fa-shirt"></i> Merchandise Showcase</a></li>
+              <li><a class="dropdown-item" href="releases.html"><i class="fa-solid fa-calendar-days"></i> Upcoming Releases</a></li>
+              <li><hr class="dropdown-divider border-subtle"></li>
+              <li><a class="dropdown-item" href="about.html"><i class="fa-solid fa-circle-info"></i> About Platform</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact & Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html"><i class="fa-solid fa-sitemap"></i> Sitemap Directory</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Action Items -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="explore.html" class="nav-action-icon" title="Search Fandoms">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a href="bookmarks.html" class="nav-action-icon" title="My Bookmarks">
+            <i class="fa-regular fa-bookmark"></i>
+            <span class="badge-bookmark-count" id="navBookmarkCount">0</span>
+          </a>
+          <a href="profile.html" class="nav-action-icon me-1" title="User Profile">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a href="login.html" class="btn btn-outline-emerald btn-pill-sm">Login</a>
+          <a href="register.html" class="btn btn-emerald btn-pill-sm">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<main>
+  <!-- Character Cinematic Profile Header -->
+  <section class="position-relative py-5" style="background: linear-gradient(180deg, rgba(20, 83, 45, 0.9) 0%, rgba(8, 18, 11, 0.98) 100%), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1600&q=80') center/cover;">
+    <div class="container py-4 text-white">
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+          <li class="breadcrumb-item"><a href="characters.html" class="text-white-50">Characters</a></li>
+          <li class="breadcrumb-item active text-accent-lime" aria-current="page">Captain Valerie Sol</li>
+        </ol>
+      </nav>
+
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4 text-center">
+          <div class="rounded-circle overflow-hidden mx-auto shadow-fanhub-glow p-2 bg-emerald-gradient" style="width: 250px; height: 250px;">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Captain Valerie Sol" class="w-100 h-100 rounded-circle object-fit-cover">
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="badge-fandom movies"><i class="fa-solid fa-film"></i> Movies Realm</span>
+            <span class="badge bg-success">Fleet Commander</span>
+          </div>
+          <h1 class="display-4 fw-bold text-white mb-2">Captain Valerie Sol</h1>
+          <p class="fs-5 text-accent-lime fst-italic mb-3">
+            &ldquo;Beyond the cosmic veil lies either our salvation or our ultimate reckoning.&rdquo;
+          </p>
+          <p class="text-white-50 fs-6 mb-4" style="max-width: 650px;">
+            Commander of the Starship Horizon, known for diplomatic brilliance and daring space navigation across uncharted cosmic anomalies.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <button class="btn btn-emerald btn-pill-lg js-bookmark-toggle" data-id="ch-1" data-title="Captain Valerie Sol" data-category="Movies" data-type="Character">
+              <i class="fa-regular fa-bookmark me-2"></i>Bookmark Character
+            </button>
+            <button class="btn btn-outline-light btn-pill-lg" onclick="showToast('Profile shared to clipboard!', 'fa-share-nodes')">
+              <i class="fa-solid fa-share-nodes me-2"></i>Share Icon
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biography, Stats & Gallery -->
+  <section class="py-5">
+    <div class="container py-2">
+      <div class="row g-5">
+        <!-- Biography & Attributes -->
+        <div class="col-lg-7">
+          <h2 class="fw-bold mb-3">Character Lore & Biography</h2>
+          <p class="text-muted fs-6 mb-4" style="line-height: 1.8;">
+            Born on the lunar orbital station Olympus, Valerie Sol distinguished herself early in the Exploratory Vanguard through her mastery of gravitational slingshot maneuvering and decisive leadership during the Jovian Crisis. Under her steady hand, the Starship Horizon was the first crewed vessel to cross the Singularity Rift intact.
+          </p>
+          <p class="text-muted fs-6 mb-4" style="line-height: 1.8;">
+            Her philosophy balances rigid tactical composure with deep philosophical empathy for alien ecosystems. Across 14 deep-space expeditions, Sol negotiated seven historic non-aggression treaties between humanoid colonies and sentient celestial forms.
+          </p>
+
+          <h3 class="fw-bold mb-3 mt-5">Core Attributes & Combat Mastery</h3>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between small fw-bold mb-1">
+              <span>Leadership & Command Presence</span>
+              <span class="text-emerald-primary">99%</span>
+            </div>
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar bg-success" style="width: 99%;"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between small fw-bold mb-1">
+              <span>Astrogation & Quantum Intellect</span>
+              <span class="text-emerald-primary">96%</span>
+            </div>
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar bg-success" style="width: 96%;"></div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="d-flex justify-content-between small fw-bold mb-1">
+              <span>Zero-G Combat Tactical Reflexes</span>
+              <span class="text-emerald-primary">88%</span>
+            </div>
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar bg-success" style="width: 88%;"></div>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="d-flex justify-content-between small fw-bold mb-1">
+              <span>Diplomatic Empathy Index</span>
+              <span class="text-emerald-primary">92%</span>
+            </div>
+            <div class="progress" style="height: 8px;">
+              <div class="progress-bar bg-success" style="width: 92%;"></div>
+            </div>
+          </div>
+
+          <!-- Character Gallery -->
+          <h3 class="fw-bold mb-3 mt-5">Concept & Cinematic Gallery</h3>
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="rounded-card overflow-hidden" style="height: 190px;">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=700&q=80" alt="Bridge Scene" class="w-100 h-100 object-fit-cover">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="rounded-card overflow-hidden" style="height: 190px;">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=700&q=80" alt="Space Singularity" class="w-100 h-100 object-fit-cover">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar: Related Media & Other Icons -->
+        <div class="col-lg-5">
+          <div class="p-4 bg-surface rounded-card border-fanhub mb-4 shadow-fanhub-sm">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-film text-emerald-primary me-2"></i>Starring In</h4>
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=150&q=80" alt="Starlight Odyssey" style="width: 70px; height: 70px; object-fit: cover; border-radius: 8px;">
+              <div>
+                <span class="badge-fandom movies" style="font-size: 0.65rem;">Feature Film</span>
+                <h5 class="fw-bold fs-6 mb-0 mt-1"><a href="content-detail.html">Starlight Odyssey: Singularity</a></h5>
+                <small class="text-muted">Directed by Aris Thorne &bull; 95.2% Hype</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 bg-surface rounded-card border-fanhub shadow-fanhub-sm">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-users text-emerald-primary me-2"></i>Fellow Fandom Icons</h4>
+            <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom border-subtle">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Ronin Cipher" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover;">
+              <div>
+                <h5 class="fw-bold fs-6 mb-0"><a href="characters.html">Ronin Cipher</a></h5>
+                <small class="text-muted">Gaming &bull; Cyber Samurai</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80" class="rounded-circle" alt="Aiko Kitsune" style="width: 50px; height: 50px; object-fit: cover;">
+              <div>
+                <h5 class="fw-bold fs-6 mb-0"><a href="characters.html">Aiko Kitsune</a></h5>
+                <small class="text-muted">Anime &bull; Spirit Alchemist</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <!-- Large Professional Footer -->
+  <footer class="fanhub-footer">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Col 1: Branding -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <div class="brand-icon-box">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <span class="text-white">Fan Hub<span class="brand-text-plus">+</span></span>
+          </a>
+          <p class="text-muted pe-lg-4" style="line-height: 1.7; font-size: 0.95rem;">
+            Your universe. Your fandom. Your world. The unified home connecting enthusiasts of Anime, Gaming, Movies, K-Pop, Comics, Manga and Cosplay.
+          </p>
+          <div class="d-flex align-items-center mt-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Discord Community"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="footer-column-heading">Explore</h5>
+          <ul class="footer-nav-list">
+            <li><a href="category-detail.html?cat=anime"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Anime</a></li>
+            <li><a href="category-detail.html?cat=gaming"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Gaming</a></li>
+            <li><a href="category-detail.html?cat=movies"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Movies</a></li>
+            <li><a href="category-detail.html?cat=tv"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> TV Shows</a></li>
+            <li><a href="categories.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> All Categories</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Discover -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5 class="footer-column-heading">Discover</h5>
+          <ul class="footer-nav-list">
+            <li><a href="characters.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Meet the Icons</a></li>
+            <li><a href="articles.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Fandom Stories</a></li>
+            <li><a href="events.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Conventions & Gatherings</a></li>
+            <li><a href="media.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Media Center</a></li>
+            <li><a href="bookmarks.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Saved Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Resources -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-column-heading">Resources</h5>
+          <ul class="footer-nav-list">
+            <li><a href="merchandise.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Merchandise Showcase</a></li>
+            <li><a href="releases.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Upcoming Releases</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> About Fan Hub Plus</a></li>
+            <li><a href="sitemap.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Platform Sitemap</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Contact & Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-copyright d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>
+          &copy; 2026 <strong>Fan Hub Plus</strong>. All rights reserved. Designed for College Semester Project.
+        </div>
+        <div class="d-flex gap-3 text-muted" style="font-size: 0.85rem;">
+          <span>Showcase Only</span>
+          <span>&bull;</span>
+          <span>Non-Commercial Discovery</span>
+          <span>&bull;</span>
+          <a href="sitemap.html" class="text-accent-lime">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Media Preview Modal -->
+  <div class="modal fade" id="fanhubMediaModal" tabindex="-1" aria-labelledby="fanhubMediaTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <div>
+            <span class="badge-fandom anime me-2" id="fanhubMediaCategory">MEDIA</span>
+            <h5 class="modal-title font-heading fw-bold d-inline" id="fanhubMediaTitle">Media Preview</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0" id="fanhubMediaBody">
+          <!-- Dynamic Content by JS -->
+        </div>
+        <div class="modal-footer d-flex justify-content-between align-items-center">
+          <small class="text-muted"><i class="fa-solid fa-circle-info me-1"></i> Interactive preview experience.</small>
+          <button type="button" class="btn btn-outline-emerald btn-pill-sm" data-bs-dismiss="modal">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="fanhubToast" class="fanhub-toast"></div>
+
+  <!-- Bootstrap 5.3.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Vanilla JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

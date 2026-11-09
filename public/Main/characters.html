@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popular Characters — Fan Hub Plus</title>
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet (Green & White Theme) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-compass-fill text-success"></i>
+        <span>Fan Hub</span>
+        <span class="brand-badge">Plus</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="explore.html">Explore</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#categoriesSection">Categories</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="characters.html">Characters</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="merchandise.html">Merchandise</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+          <div class="position-relative" style="min-width: 170px;">
+            <input type="text" id="globalSearchInput" class="form-control form-control-sm search-input-box pe-4" placeholder="Search characters..." aria-label="Search">
+            <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-2 text-muted"></i>
+          </div>
+
+          <a href="bookmarks.html" class="btn btn-sm btn-surface position-relative px-2 py-1" title="Saved Bookmarks">
+            <i class="bi bi-bookmark-fill text-success"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success bookmark-count-badge">0</span>
+          </a>
+
+          <a href="profile.html" class="btn btn-sm btn-surface px-2 py-1" title="User Profile">
+            <i class="bi bi-person-circle text-muted"></i>
+          </a>
+
+          <a href="login.html" class="btn btn-sm btn-surface ms-1">Login</a>
+          <a href="signup.html" class="btn btn-sm btn-brand">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Global Search Modal -->
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content search-modal-content">
+        <div class="modal-header border-bottom pb-2">
+          <div class="d-flex align-items-center gap-2 w-100">
+            <i class="bi bi-search text-success fs-5"></i>
+            <input type="text" id="modalSearchInput" class="form-control search-input-box border-0 fs-5 text-dark" placeholder="Search fandoms, characters, articles..." autofocus>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-3">
+          <div id="searchResultsContainer" class="search-results-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="py-4">
+    <div class="container">
+      <!-- Breadcrumb & Header -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb small mb-1">
+          <li class="breadcrumb-item"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item active text-success fw-semibold" aria-current="page">Characters</li>
+        </ol>
+      </nav>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+        <div>
+          <h1 class="h2 fw-bold text-dark mb-1">Popular Characters & Heroes</h1>
+          <p class="text-muted small mb-0">Browse character profiles, iconic sorcerers, witchers, vigilantes, and idol superstars.</p>
+        </div>
+        <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25" id="charCountBadge">8 Characters</span>
+      </div>
+
+      <!-- Category Filter Pills (Clean White with Green Focus) -->
+      <div class="d-flex flex-wrap gap-2 mb-4 p-2 rounded-3 bg-white border shadow-sm">
+        <button class="btn btn-sm btn-brand char-filter-btn" data-cat="all">All Fandoms</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="anime">Anime</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="gaming">Gaming</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="movies">Movies</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="tv">TV Shows</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="kpop">K-Pop</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="manga">Manga</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="comics">Comics</button>
+        <button class="btn btn-sm btn-surface char-filter-btn" data-cat="cosplay">Cosplay</button>
+      </div>
+
+      <!-- Characters Grid -->
+      <div class="row g-4" id="charactersGrid">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       CHARACTER DETAIL MODAL (Green & White Theme)
+       ========================================================================= -->
+  <div class="modal fade" id="charDetailModal" tabindex="-1" aria-labelledby="charModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content search-modal-content">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title fw-bold text-dark" id="charModalTitle">Character Profile</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <img id="charModalImage" src="" alt="Character" class="rounded-circle shadow mb-3 border border-3 border-success" style="width: 140px; height: 140px; object-fit: cover;">
+          <h4 class="fw-bold text-dark mb-1" id="charModalName">--</h4>
+          <div class="badge bg-success mb-2" id="charModalRole">--</div>
+          <p class="text-muted small" id="charModalFandom">--</p>
+          <div class="text-start p-3 rounded-3 mt-3 bg-light border">
+            <h6 class="text-dark fw-bold mb-2">Lore & Overview</h6>
+            <p class="text-secondary small mb-0" id="charModalDesc">--</p>
+          </div>
+        </div>
+        <div class="modal-footer border-top bg-light rounded-bottom">
+          <button type="button" class="btn btn-sm btn-surface" data-bs-dismiss="modal">Close</button>
+          <a href="explore.html" class="btn btn-sm btn-brand">Find Fandom Titles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container text-center small" style="color: #a7f3d0;">
+      © 2026 Fan Hub Plus. All rights reserved. Green & White Theme.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/chatbot.js"></script>
+
+  <!-- Characters Controller -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const grid = document.getElementById("charactersGrid");
+      const countBadge = document.getElementById("charCountBadge");
+      const filterBtns = document.querySelectorAll(".char-filter-btn");
+
+      let currentCategory = "all";
+
+      function renderCharacters() {
+        const filtered = currentCategory === "all" 
+          ? FANHUB_DATA.characters 
+          : FANHUB_DATA.characters.filter(c => c.categoryId === currentCategory);
+
+        countBadge.textContent = `${filtered.length} Characters`;
+
+        grid.innerHTML = filtered.map(c => `
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="fanhub-card h-100">
+              <div class="card-img-wrapper portrait">
+                <img src="${c.image}" alt="${c.name}" loading="lazy">
+                <div class="position-absolute top-0 start-0 m-2">
+                  <span class="badge ${c.badgeClass} badge-category">${c.categoryId}</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title mb-1">${c.name}</h5>
+                <div class="text-success small fw-bold mb-2">${c.role}</div>
+                <div class="text-muted small mb-2"><i class="bi bi-tag text-success me-1"></i>${c.fandom}</div>
+                <p class="card-text small">${c.description}</p>
+                <div class="mt-auto pt-2 border-top border-light-subtle">
+                  <button class="btn btn-sm btn-surface w-100 view-char-btn" data-char-id="${c.id}">
+                    <i class="bi bi-person-lines-fill me-1 text-success"></i>View Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        // Bind modal open
+        document.querySelectorAll(".view-char-btn").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const charId = btn.getAttribute("data-char-id");
+            const char = FANHUB_DATA.characters.find(item => item.id === charId);
+            if (char && window.bootstrap) {
+              document.getElementById("charModalImage").src = char.image;
+              document.getElementById("charModalName").textContent = char.name;
+              document.getElementById("charModalRole").textContent = char.role;
+              document.getElementById("charModalFandom").textContent = `Fandom: ${char.fandom}`;
+              document.getElementById("charModalDesc").textContent = char.description;
+              const modal = new bootstrap.Modal(document.getElementById("charDetailModal"));
+              modal.show();
+            }
+          });
+        });
+      }
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => {
+            b.classList.remove("btn-brand");
+            b.classList.add("btn-surface");
+          });
+          btn.classList.remove("btn-surface");
+          btn.classList.add("btn-brand");
+          currentCategory = btn.getAttribute("data-cat");
+          renderCharacters();
+        });
+      });
+
+      renderCharacters();
+    });
+  </script>
+</body>
+</html>

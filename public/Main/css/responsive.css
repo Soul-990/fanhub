@@ -1,0 +1,178 @@
+/* ==========================================================================
+   FAN HUB PLUS - RESPONSIVE STYLESHEET
+   Breakpoints: 320px, 375px, 768px, 1024px, 1440px+
+   ========================================================================== */
+
+/* Extra Large Screens (1440px+) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+  .hero-main-title {
+    font-size: 4.2rem;
+  }
+  .hero-composition {
+    height: 560px;
+  }
+}
+
+/* Desktops and Laptops (1024px to 1439px) */
+@media (max-width: 1199px) {
+  .hero-main-title {
+    font-size: 3.2rem;
+  }
+  .hero-card-anime {
+    width: 220px;
+    height: 300px;
+    left: 10px;
+  }
+  .hero-card-gaming {
+    width: 230px;
+    height: 310px;
+    right: 10px;
+  }
+  .hero-card-kpop {
+    width: 190px;
+    height: 230px;
+    left: 130px;
+  }
+}
+
+/* Tablets (768px to 1023px) */
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 3.5rem 0 4.5rem 0;
+    text-align: center;
+  }
+  .hero-lead-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-cta-group {
+    justify-content: center;
+  }
+  .hero-composition {
+    height: 420px;
+    margin-top: 3rem;
+  }
+  .hero-card-anime {
+    width: 200px;
+    height: 270px;
+    left: 10%;
+  }
+  .hero-card-gaming {
+    width: 210px;
+    height: 280px;
+    right: 10%;
+  }
+  .hero-card-kpop {
+    width: 170px;
+    height: 210px;
+    left: 35%;
+  }
+  .hero-floating-stat {
+    bottom: 10px;
+    left: 5%;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .countdown-banner {
+    padding: 2.2rem;
+  }
+  .countdown-boxes {
+    justify-content: center;
+  }
+}
+
+/* Mobile Devices (375px to 767px) */
+@media (max-width: 767px) {
+  .top-accessibility-bar {
+    display: none;
+  }
+  .hero-main-title {
+    font-size: 2.5rem;
+  }
+  .hero-composition {
+    height: 340px;
+  }
+  .hero-card-anime {
+    width: 160px;
+    height: 220px;
+    left: 0;
+  }
+  .hero-card-gaming {
+    width: 170px;
+    height: 230px;
+    right: 0;
+    top: 50px;
+  }
+  .hero-card-kpop {
+    display: none;
+  }
+  .hero-floating-stat {
+    display: none;
+  }
+  .event-item-card {
+    flex-direction: column;
+  }
+  .event-calendar-badge {
+    width: 100%;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .event-cal-day {
+    font-size: 1.4rem;
+  }
+  .article-mini-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .article-mini-thumb {
+    width: 100%;
+    height: 160px;
+  }
+  .countdown-banner {
+    padding: 1.75rem;
+    text-align: center;
+  }
+  .timer-box {
+    min-width: 65px;
+    padding: 0.75rem 0.85rem;
+  }
+  .timer-digit {
+    font-size: 1.65rem;
+  }
+  .fanhub-footer {
+    padding: 3.5rem 0 2rem 0;
+    text-align: center;
+  }
+  .footer-column-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-social-btn {
+    margin: 0.25rem;
+  }
+}
+
+/* Extra Small Screens (320px to 374px) */
+@media (max-width: 374px) {
+  .hero-main-title {
+    font-size: 2.1rem;
+  }
+  .btn-pill-lg {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.92rem;
+  }
+  .timer-box {
+    min-width: 58px;
+    padding: 0.5rem;
+  }
+  .timer-digit {
+    font-size: 1.4rem;
+  }
+}

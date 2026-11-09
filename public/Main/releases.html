@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Releases & Live Countdown | Fan Hub Plus</title>
+  <meta name="description" content="Fan Hub Plus - The unified fandom discovery platform for Anime, Gaming, Movies, TV, K-Pop, Comics, Manga and Cosplay.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6.5.1 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Accessibility & Preferences Bar -->
+  <div class="top-accessibility-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-fandom cosplay" style="font-size: 0.68rem; padding: 0.2rem 0.6rem;">FANDOM UNIVERSE</span>
+        <span class="text-muted d-none d-md-inline" style="font-size: 0.8rem;">Explore the largest community discovery platform for Anime, Gaming & Pop Culture</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <!-- Font Size Controls -->
+        <div class="d-flex align-items-center gap-1" title="Accessibility Font Size Controls">
+          <span class="text-muted me-1" style="font-size: 0.75rem;">Font:</span>
+          <button class="font-btn-toggle" data-size="sm" title="Small Font">A-</button>
+          <button class="font-btn-toggle active" data-size="md" title="Default Font">A</button>
+          <button class="font-btn-toggle" data-size="lg" title="Large Font">A+</button>
+        </div>
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+          <span class="d-none d-sm-inline">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg fanhub-navbar">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <span>Fan Hub<span class="brand-text-plus">+</span></span>
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#fanhubNavbarNav" aria-controls="fanhubNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars-staggered text-emerald-primary fs-4"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="fanhubNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="characters.html">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="articles.html">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="media.html">Media</a>
+          </li>
+          <!-- More Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="merchandise.html"><i class="fa-solid fa-shirt"></i> Merchandise Showcase</a></li>
+              <li><a class="dropdown-item" href="releases.html"><i class="fa-solid fa-calendar-days"></i> Upcoming Releases</a></li>
+              <li><hr class="dropdown-divider border-subtle"></li>
+              <li><a class="dropdown-item" href="about.html"><i class="fa-solid fa-circle-info"></i> About Platform</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact & Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html"><i class="fa-solid fa-sitemap"></i> Sitemap Directory</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Action Items -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="explore.html" class="nav-action-icon" title="Search Fandoms">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a href="bookmarks.html" class="nav-action-icon" title="My Bookmarks">
+            <i class="fa-regular fa-bookmark"></i>
+            <span class="badge-bookmark-count" id="navBookmarkCount">0</span>
+          </a>
+          <a href="profile.html" class="nav-action-icon me-1" title="User Profile">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a href="login.html" class="btn btn-outline-emerald btn-pill-sm">Login</a>
+          <a href="register.html" class="btn btn-emerald btn-pill-sm">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<main class="py-5">
+  <div class="container">
+    <div class="section-header text-center mx-auto mb-4" style="max-width: 720px;">
+      <span class="section-badge"><i class="fa-solid fa-calendar-days me-1"></i> FANDOM HORIZON</span>
+      <h1 class="section-title">Coming Soon</h1>
+      <p class="section-subtitle mx-auto">The definitive schedule of anticipated anime seasons, blockbuster games, movie premieres, and manga volumes.</p>
+    </div>
+
+    <!-- Featured Live Countdown -->
+    <div class="countdown-banner mb-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <span class="badge bg-light text-dark fw-bold mb-2 px-3 py-2 rounded-pill"><i class="fa-solid fa-bolt text-warning me-1"></i> MAJOR PREMIERE COUNTDOWN</span>
+          <h2 class="display-5 fw-bold text-white mb-2">Chrono Blade: Zero Dawn Movie Premiere</h2>
+          <p class="text-white-50 fs-6 mb-3">The theatrical debut uniting all five animators' guild studios in a synchronized worldwide premiere in IMAX 3D.</p>
+          <div class="countdown-boxes">
+            <div class="timer-box"><div class="timer-digit" id="timerDays">24</div><div class="timer-unit">Days</div></div>
+            <div class="timer-box"><div class="timer-digit" id="timerHours">14</div><div class="timer-unit">Hours</div></div>
+            <div class="timer-box"><div class="timer-digit" id="timerMinutes">35</div><div class="timer-unit">Minutes</div></div>
+            <div class="timer-box"><div class="timer-digit" id="timerSeconds">48</div><div class="timer-unit">Seconds</div></div>
+          </div>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <button class="btn btn-light text-dark fw-bold btn-pill-lg shadow" onclick="showToast('Notification alert set! We will remind you at launch.', 'fa-bell')">
+            <i class="fa-regular fa-bell me-2"></i>Remind Me at Launch
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Release Calendar Timeline -->
+    <h3 class="fw-bold mb-4"><i class="fa-solid fa-list-check text-emerald-primary me-2"></i>Confirmed Release Schedule (Q4 2026)</h3>
+    <div class="row g-4">
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&q=80" alt="Chrono Blade: Zero Dawn Movie">
+              <span class="badge-fandom anime content-badge-float">Anime</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>October 18, 2026</span>
+              <h4 class="card-title fs-6 mt-1">Chrono Blade: Zero Dawn Movie</h4>
+              <p class="card-description small">Platform: Theaters & IMAX 3D</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added Chrono Blade: Zero Dawn Movie to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=600&q=80" alt="Cyber Horizon: Void Walkers">
+              <span class="badge-fandom gaming content-badge-float">Gaming</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>October 28, 2026</span>
+              <h4 class="card-title fs-6 mt-1">Cyber Horizon: Void Walkers</h4>
+              <p class="card-description small">Platform: PC / PS5 / Xbox Series X</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added Cyber Horizon: Void Walkers to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&q=80" alt="ECLIPSE: Hyperion (Mini Album)">
+              <span class="badge-fandom k-pop content-badge-float">K-Pop</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>November 05, 2026</span>
+              <h4 class="card-title fs-6 mt-1">ECLIPSE: Hyperion (Mini Album)</h4>
+              <p class="card-description small">Platform: Digital Stream & Physical Deluxe</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added ECLIPSE: Hyperion (Mini Album) to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=600&q=80" alt="Vigilante Noir: Requiem #1">
+              <span class="badge-fandom comics content-badge-float">Comics</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>November 12, 2026</span>
+              <h4 class="card-title fs-6 mt-1">Vigilante Noir: Requiem #1</h4>
+              <p class="card-description small">Platform: Comic Book Stores & Digital App</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added Vigilante Noir: Requiem #1 to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80" alt="Starlight Odyssey: Final Cut 4K">
+              <span class="badge-fandom movies content-badge-float">Movies</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>November 20, 2026</span>
+              <h4 class="card-title fs-6 mt-1">Starlight Odyssey: Final Cut 4K</h4>
+              <p class="card-description small">Platform: Ultra HD Blu-Ray & Streaming</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added Starlight Odyssey: Final Cut 4K to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-6 col-lg-4">
+          <div class="content-item-card h-100">
+            <div class="content-card-image" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&q=80" alt="Spirit Vanguard Vol. 15">
+              <span class="badge-fandom manga content-badge-float">Manga</span>
+            </div>
+            <div class="card-body">
+              <span class="text-emerald-primary fw-bold small"><i class="fa-regular fa-calendar-check me-1"></i>December 04, 2026</span>
+              <h4 class="card-title fs-6 mt-1">Spirit Vanguard Vol. 15</h4>
+              <p class="card-description small">Platform: Tankobon Print & Shonen App</p>
+              <div class="pt-2 border-top border-subtle mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge bg-light text-dark border-subtle">Hype Tracking</span>
+                <button class="btn btn-outline-emerald btn-sm rounded-pill" onclick="showToast('Added Spirit Vanguard Vol. 15 to your watchlist!', 'fa-heart')">Watchlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</main>
+
+  <!-- Large Professional Footer -->
+  <footer class="fanhub-footer">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Col 1: Branding -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <div class="brand-icon-box">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <span class="text-white">Fan Hub<span class="brand-text-plus">+</span></span>
+          </a>
+          <p class="text-muted pe-lg-4" style="line-height: 1.7; font-size: 0.95rem;">
+            Your universe. Your fandom. Your world. The unified home connecting enthusiasts of Anime, Gaming, Movies, K-Pop, Comics, Manga and Cosplay.
+          </p>
+          <div class="d-flex align-items-center mt-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Discord Community"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="footer-column-heading">Explore</h5>
+          <ul class="footer-nav-list">
+            <li><a href="category-detail.html?cat=anime"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Anime</a></li>
+            <li><a href="category-detail.html?cat=gaming"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Gaming</a></li>
+            <li><a href="category-detail.html?cat=movies"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Movies</a></li>
+            <li><a href="category-detail.html?cat=tv"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> TV Shows</a></li>
+            <li><a href="categories.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> All Categories</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Discover -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5 class="footer-column-heading">Discover</h5>
+          <ul class="footer-nav-list">
+            <li><a href="characters.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Meet the Icons</a></li>
+            <li><a href="articles.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Fandom Stories</a></li>
+            <li><a href="events.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Conventions & Gatherings</a></li>
+            <li><a href="media.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Media Center</a></li>
+            <li><a href="bookmarks.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Saved Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Resources -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-column-heading">Resources</h5>
+          <ul class="footer-nav-list">
+            <li><a href="merchandise.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Merchandise Showcase</a></li>
+            <li><a href="releases.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Upcoming Releases</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> About Fan Hub Plus</a></li>
+            <li><a href="sitemap.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Platform Sitemap</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Contact & Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-copyright d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>
+          &copy; 2026 <strong>Fan Hub Plus</strong>. All rights reserved. Designed for College Semester Project.
+        </div>
+        <div class="d-flex gap-3 text-muted" style="font-size: 0.85rem;">
+          <span>Showcase Only</span>
+          <span>&bull;</span>
+          <span>Non-Commercial Discovery</span>
+          <span>&bull;</span>
+          <a href="sitemap.html" class="text-accent-lime">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Media Preview Modal -->
+  <div class="modal fade" id="fanhubMediaModal" tabindex="-1" aria-labelledby="fanhubMediaTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <div>
+            <span class="badge-fandom anime me-2" id="fanhubMediaCategory">MEDIA</span>
+            <h5 class="modal-title font-heading fw-bold d-inline" id="fanhubMediaTitle">Media Preview</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0" id="fanhubMediaBody">
+          <!-- Dynamic Content by JS -->
+        </div>
+        <div class="modal-footer d-flex justify-content-between align-items-center">
+          <small class="text-muted"><i class="fa-solid fa-circle-info me-1"></i> Interactive preview experience.</small>
+          <button type="button" class="btn btn-outline-emerald btn-pill-sm" data-bs-dismiss="modal">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="fanhubToast" class="fanhub-toast"></div>
+
+  <!-- Bootstrap 5.3.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Vanilla JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

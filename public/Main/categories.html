@@ -1,0 +1,574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fandom Categories Hub | Fan Hub Plus</title>
+  <meta name="description" content="Fan Hub Plus - The unified fandom discovery platform for Anime, Gaming, Movies, TV, K-Pop, Comics, Manga and Cosplay.">
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome 6.5.1 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Accessibility & Preferences Bar -->
+  <div class="top-accessibility-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-2">
+        <span class="badge-fandom cosplay" style="font-size: 0.68rem; padding: 0.2rem 0.6rem;">FANDOM UNIVERSE</span>
+        <span class="text-muted d-none d-md-inline" style="font-size: 0.8rem;">Explore the largest community discovery platform for Anime, Gaming & Pop Culture</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <!-- Font Size Controls -->
+        <div class="d-flex align-items-center gap-1" title="Accessibility Font Size Controls">
+          <span class="text-muted me-1" style="font-size: 0.75rem;">Font:</span>
+          <button class="font-btn-toggle" data-size="sm" title="Small Font">A-</button>
+          <button class="font-btn-toggle active" data-size="md" title="Default Font">A</button>
+          <button class="font-btn-toggle" data-size="lg" title="Large Font">A+</button>
+        </div>
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light / Dark Mode">
+          <i class="fa-solid fa-moon"></i>
+          <span class="d-none d-sm-inline">Dark Mode</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg fanhub-navbar">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="index.html">
+        <div class="brand-icon-box">
+          <i class="fa-solid fa-shapes"></i>
+        </div>
+        <span>Fan Hub<span class="brand-text-plus">+</span></span>
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#fanhubNavbarNav" aria-controls="fanhubNavbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars-staggered text-emerald-primary fs-4"></i>
+      </button>
+
+      <!-- Navigation Links -->
+      <div class="collapse navbar-collapse" id="fanhubNavbarNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link " href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="characters.html">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="articles.html">Articles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="media.html">Media</a>
+          </li>
+          <!-- More Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="merchandise.html"><i class="fa-solid fa-shirt"></i> Merchandise Showcase</a></li>
+              <li><a class="dropdown-item" href="releases.html"><i class="fa-solid fa-calendar-days"></i> Upcoming Releases</a></li>
+              <li><hr class="dropdown-divider border-subtle"></li>
+              <li><a class="dropdown-item" href="about.html"><i class="fa-solid fa-circle-info"></i> About Platform</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact & Feedback</a></li>
+              <li><a class="dropdown-item" href="sitemap.html"><i class="fa-solid fa-sitemap"></i> Sitemap Directory</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Action Items -->
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="explore.html" class="nav-action-icon" title="Search Fandoms">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a href="bookmarks.html" class="nav-action-icon" title="My Bookmarks">
+            <i class="fa-regular fa-bookmark"></i>
+            <span class="badge-bookmark-count" id="navBookmarkCount">0</span>
+          </a>
+          <a href="profile.html" class="nav-action-icon me-1" title="User Profile">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a href="login.html" class="btn btn-outline-emerald btn-pill-sm">Login</a>
+          <a href="register.html" class="btn btn-emerald btn-pill-sm">Register</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<main class="py-5">
+  <div class="container">
+    <div class="section-header text-center mx-auto mb-5" style="max-width: 720px;">
+      <span class="section-badge"><i class="fa-solid fa-shapes me-1"></i> FANDOM REALMS</span>
+      <h1 class="section-title">Discover All 8 Core Universes</h1>
+      <p class="section-subtitle mx-auto">From hand-drawn Japanese animation to next-generation competitive gaming and comic multiverses.</p>
+    </div>
+
+    <div class="row g-4">
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-dragon"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Anime Universe</h3>
+                <small class="text-emerald-primary fw-bold">1.2M Fans &bull; 14,200 Titles</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1200&q=80" alt="Anime" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Epic shonen adventures, mecha sagas, isekai journeys & timeless classics.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom anime" style="font-size: 0.7rem;">Chrono Blade</span><span class="badge-fandom anime" style="font-size: 0.7rem;">Spirit Vanguard</span><span class="badge-fandom anime" style="font-size: 0.7rem;">Aiko Alchemist</span><span class="badge-fandom anime" style="font-size: 0.7rem;">Neo Tokyo 2099</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Shonen</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Mecha</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Isekai</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Cyberpunk</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Slice of Life</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=anime" class="btn btn-emerald btn-pill-sm">
+                Enter Anime Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Anime Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Gaming Universe</h3>
+                <small class="text-emerald-primary fw-bold">2.1M Gamers &bull; 18,500 Titles</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&q=80" alt="Gaming" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Next-gen RPGs, esports titles, indie masterpieces and cyber worlds.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom gaming" style="font-size: 0.7rem;">Aetheria Titans</span><span class="badge-fandom gaming" style="font-size: 0.7rem;">Cyber Ronin</span><span class="badge-fandom gaming" style="font-size: 0.7rem;">Void Walkers</span><span class="badge-fandom gaming" style="font-size: 0.7rem;">Chrono Mecha</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Action RPG</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Tactical Strategy</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">MMORPG</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Shooter</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Open World</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=gaming" class="btn btn-emerald btn-pill-sm">
+                Enter Gaming Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Gaming Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-film"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Movies Universe</h3>
+                <small class="text-emerald-primary fw-bold">980K Moviegoers &bull; 9,400 Films</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=80" alt="Movies" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Cinematic universes, sci-fi epics, blockbusters & indie cinema gems.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom movies" style="font-size: 0.7rem;">Starlight Odyssey</span><span class="badge-fandom movies" style="font-size: 0.7rem;">Singularity Protocol</span><span class="badge-fandom movies" style="font-size: 0.7rem;">Solaris Prime</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Hard Sci-Fi</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Space Opera</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Psychological Thriller</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Fantasy Epic</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=movies" class="btn btn-emerald btn-pill-sm">
+                Enter Movies Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Movies Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-tv"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">TV Shows Universe</h3>
+                <small class="text-emerald-primary fw-bold">840K Viewers &bull; 6,100 Seasons</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&q=80" alt="TV Shows" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Binge-worthy mysteries, dystopian dramas, fantasy series & cult shows.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom tv" style="font-size: 0.7rem;">Shadow Protocol</span><span class="badge-fandom tv" style="font-size: 0.7rem;">Underground Convoys</span><span class="badge-fandom tv" style="font-size: 0.7rem;">Grid Lockdown</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Dystopian Noir</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Mystery Thriller</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Supernatural Drama</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=tv" class="btn btn-emerald btn-pill-sm">
+                Enter TV Shows Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore TV Shows Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-microphone-lines"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">K-Pop Universe</h3>
+                <small class="text-emerald-primary fw-bold">1.8M Stans &bull; 4,200 Releases</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200&q=80" alt="K-Pop" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Global idol groups, chart-topping comebacks, choreography & lightsticks.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom kpop" style="font-size: 0.7rem;">ECLIPSE</span><span class="badge-fandom kpop" style="font-size: 0.7rem;">Solar Prism</span><span class="badge-fandom kpop" style="font-size: 0.7rem;">Hyperion Nova</span><span class="badge-fandom kpop" style="font-size: 0.7rem;">Prism Wave</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Synth-Pop</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Hyperpop</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Dance EDM</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">R&B Ballads</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=kpop" class="btn btn-emerald btn-pill-sm">
+                Enter K-Pop Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore K-Pop Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-mask"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Comics Universe</h3>
+                <small class="text-emerald-primary fw-bold">750K Readers &bull; 22,000 Issues</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&q=80" alt="Comics" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Superhero lore, gritty graphic novels, dark universes and multiverses.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom comics" style="font-size: 0.7rem;">Nightfall Crusade</span><span class="badge-fandom comics" style="font-size: 0.7rem;">Vigilante Noir</span><span class="badge-fandom comics" style="font-size: 0.7rem;">Acoustic Shadow</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Superhero</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Crime Noir</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Supernatural Mystery</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=comics" class="btn btn-emerald btn-pill-sm">
+                Enter Comics Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Comics Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-book-open"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Manga Universe</h3>
+                <small class="text-emerald-primary fw-bold">1.4M Readers &bull; 31,000 Volumes</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=1200&q=80" alt="Manga" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Stunning hand-drawn ink art, serialization releases and author spotlights.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom manga" style="font-size: 0.7rem;">Spirit Vanguard</span><span class="badge-fandom manga" style="font-size: 0.7rem;">Sumi-e Legends</span><span class="badge-fandom manga" style="font-size: 0.7rem;">Mountain Shrine</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Historical Shonen</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Dark Fantasy</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Supernatural Action</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=manga" class="btn btn-emerald btn-pill-sm">
+                Enter Manga Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Manga Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-lg-6">
+          <div class="glass-panel rounded-card border-fanhub p-4 h-100 d-flex flex-column shadow-fanhub-sm">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="brand-icon-box" style="width: 52px; height: 52px; font-size: 1.5rem;">
+                <i class="fa-solid fa-masks-theater"></i>
+              </div>
+              <div>
+                <h3 class="fw-bold mb-0">Cosplay Universe</h3>
+                <small class="text-emerald-primary fw-bold">620K Makers &bull; 8,900 Showcase Builds</small>
+              </div>
+            </div>
+            
+            <div class="rounded-card overflow-hidden mb-3" style="height: 180px;">
+              <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=1200&q=80" alt="Cosplay" class="w-100 h-100 object-fit-cover">
+            </div>
+
+            <p class="text-muted mb-3">Armor crafting, costume artistry, prop making & convention showcases.</p>
+
+            <div class="mb-3">
+              <small class="text-muted fw-bold d-block mb-1">Top Franchises & Worlds:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-fandom cosplay" style="font-size: 0.7rem;">Project Valkyrie</span><span class="badge-fandom cosplay" style="font-size: 0.7rem;">Raven Empress</span><span class="badge-fandom cosplay" style="font-size: 0.7rem;">Armored Cyber-Mecha</span>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <small class="text-muted fw-bold d-block mb-1">Popular Subgenres:</small>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Armor Crafting</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Prop Engineering</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Textile FX</span><span class="badge bg-light text-dark border-subtle" style="font-size: 0.72rem;">Runway Masquerade</span>
+              </div>
+            </div>
+
+            <div class="mt-auto d-flex justify-content-between align-items-center pt-3 border-top border-subtle">
+              <a href="category-detail.html?cat=cosplay" class="btn btn-emerald btn-pill-sm">
+                Enter Cosplay Realm <i class="fa-solid fa-arrow-right ms-1"></i>
+              </a>
+              <a href="explore.html" class="text-muted small">Explore Cosplay Media <i class="fa-solid fa-compass ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</main>
+
+  <!-- Large Professional Footer -->
+  <footer class="fanhub-footer">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <!-- Col 1: Branding -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <div class="brand-icon-box">
+              <i class="fa-solid fa-shapes"></i>
+            </div>
+            <span class="text-white">Fan Hub<span class="brand-text-plus">+</span></span>
+          </a>
+          <p class="text-muted pe-lg-4" style="line-height: 1.7; font-size: 0.95rem;">
+            Your universe. Your fandom. Your world. The unified home connecting enthusiasts of Anime, Gaming, Movies, K-Pop, Comics, Manga and Cosplay.
+          </p>
+          <div class="d-flex align-items-center mt-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="Discord Community"><i class="fa-brands fa-discord"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5 class="footer-column-heading">Explore</h5>
+          <ul class="footer-nav-list">
+            <li><a href="category-detail.html?cat=anime"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Anime</a></li>
+            <li><a href="category-detail.html?cat=gaming"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Gaming</a></li>
+            <li><a href="category-detail.html?cat=movies"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Movies</a></li>
+            <li><a href="category-detail.html?cat=tv"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> TV Shows</a></li>
+            <li><a href="categories.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> All Categories</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Discover -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5 class="footer-column-heading">Discover</h5>
+          <ul class="footer-nav-list">
+            <li><a href="characters.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Meet the Icons</a></li>
+            <li><a href="articles.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Fandom Stories</a></li>
+            <li><a href="events.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Conventions & Gatherings</a></li>
+            <li><a href="media.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Media Center</a></li>
+            <li><a href="bookmarks.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Saved Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Resources -->
+        <div class="col-lg-3 col-md-6">
+          <h5 class="footer-column-heading">Resources</h5>
+          <ul class="footer-nav-list">
+            <li><a href="merchandise.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Merchandise Showcase</a></li>
+            <li><a href="releases.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Upcoming Releases</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> About Fan Hub Plus</a></li>
+            <li><a href="sitemap.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Platform Sitemap</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right text-emerald-primary" style="font-size: 0.7rem;"></i> Contact & Feedback</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-copyright d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+        <div>
+          &copy; 2026 <strong>Fan Hub Plus</strong>. All rights reserved. Designed for College Semester Project.
+        </div>
+        <div class="d-flex gap-3 text-muted" style="font-size: 0.85rem;">
+          <span>Showcase Only</span>
+          <span>&bull;</span>
+          <span>Non-Commercial Discovery</span>
+          <span>&bull;</span>
+          <a href="sitemap.html" class="text-accent-lime">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Media Preview Modal -->
+  <div class="modal fade" id="fanhubMediaModal" tabindex="-1" aria-labelledby="fanhubMediaTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header d-flex justify-content-between align-items-center">
+          <div>
+            <span class="badge-fandom anime me-2" id="fanhubMediaCategory">MEDIA</span>
+            <h5 class="modal-title font-heading fw-bold d-inline" id="fanhubMediaTitle">Media Preview</h5>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0" id="fanhubMediaBody">
+          <!-- Dynamic Content by JS -->
+        </div>
+        <div class="modal-footer d-flex justify-content-between align-items-center">
+          <small class="text-muted"><i class="fa-solid fa-circle-info me-1"></i> Interactive preview experience.</small>
+          <button type="button" class="btn btn-outline-emerald btn-pill-sm" data-bs-dismiss="modal">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="fanhubToast" class="fanhub-toast"></div>
+
+  <!-- Bootstrap 5.3.3 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Vanilla JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

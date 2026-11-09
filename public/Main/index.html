@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fan Hub Plus — Discover Your Fandom Universe</title>
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Custom Stylesheet (Green & White Theme) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom sticky-top">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-compass-fill text-success"></i>
+        <span>Fan Hub</span>
+        <span class="brand-badge">Plus</span>
+      </a>
+
+      <!-- Mobile Toggler -->
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links & Search -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="explore.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#categoriesSection">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="characters.html">Characters</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="media.html">Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="merchandise.html">Merchandise</a>
+          </li>
+        </ul>
+
+        <!-- Right Side: Search, Bookmarks, Login & Sign Up -->
+        <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+          <!-- Global Search Input trigger -->
+          <div class="position-relative" style="min-width: 170px;">
+            <input type="text" id="globalSearchInput" class="form-control form-control-sm search-input-box pe-4" placeholder="Search fandoms..." aria-label="Global search">
+            <i class="bi bi-search position-absolute top-50 end-0 translate-middle-y me-2 text-muted"></i>
+          </div>
+
+          <!-- Bookmarks Link with live counter -->
+          <a href="bookmarks.html" class="btn btn-sm btn-surface position-relative px-2 py-1" title="Saved Bookmarks">
+            <i class="bi bi-bookmark-fill text-success"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success bookmark-count-badge">0</span>
+          </a>
+
+          <!-- Profile -->
+          <a href="profile.html" class="btn btn-sm btn-surface px-2 py-1" title="User Profile">
+            <i class="bi bi-person-circle text-muted"></i>
+          </a>
+
+          <!-- Auth Buttons -->
+          <a href="login.html" class="btn btn-sm btn-surface ms-1">Login</a>
+          <a href="signup.html" class="btn btn-sm btn-brand">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content search-modal-content">
+        <div class="modal-header border-bottom pb-2">
+          <div class="d-flex align-items-center gap-2 w-100">
+            <i class="bi bi-search text-success fs-5"></i>
+            <input type="text" id="modalSearchInput" class="form-control search-input-box border-0 fs-5 text-dark" placeholder="Search anime, games, movies, characters, articles..." autofocus>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-3">
+          <div id="searchResultsContainer" class="search-results-list">
+            <div class="text-center py-4 text-muted">
+              <i class="bi bi-search fs-2 mb-2 d-block text-success"></i>
+              Type a title, character name, category or genre to discover content...
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top py-2 d-flex justify-content-between bg-light rounded-bottom">
+          <span class="text-muted small">Press <kbd class="bg-white text-dark border px-2 py-1 rounded shadow-sm">ESC</kbd> to close</span>
+          <a href="explore.html" class="text-success small fw-semibold text-decoration-none">Open Advanced Explorer <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <div class="d-inline-flex align-items-center gap-2 px-3 py-1 mb-3 rounded-pill bg-white border border-success border-opacity-25 shadow-sm">
+              <span class="badge bg-success rounded-circle p-1"></span>
+              <span class="small text-success fw-bold">All-in-One Entertainment Portal</span>
+            </div>
+            <h1 class="hero-title">
+              Discover Your <br>
+              <span class="text-transparent" style="background: linear-gradient(135deg, #059669, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Fandom Universe</span>
+            </h1>
+            <p class="hero-subtitle">
+              Explore anime, games, movies, TV shows, K-Pop, comics, manga and cosplay—all in one place. Discover, search, filter, and save your favorite pop-culture moments.
+            </p>
+            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+              <a href="explore.html" class="btn btn-brand btn-lg px-4 py-2">
+                <i class="bi bi-compass me-2"></i>Explore Now
+              </a>
+              <a href="#categoriesSection" class="btn btn-surface btn-lg px-4 py-2">
+                <i class="bi bi-grid-3x3-gap me-2 text-success"></i>Browse Categories
+              </a>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="row pt-4 mt-3 border-top border-secondary border-opacity-25 text-start g-3">
+              <div class="col-4">
+                <div class="fs-4 fw-bold text-dark">8+</div>
+                <div class="small text-muted">Fandom Worlds</div>
+              </div>
+              <div class="col-4">
+                <div class="fs-4 fw-bold text-dark">5,000+</div>
+                <div class="small text-muted">Curated Titles</div>
+              </div>
+              <div class="col-4">
+                <div class="fs-4 fw-bold text-dark">100%</div>
+                <div class="small text-muted">Community Driven</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-card-preview">
+              <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Fandom Hero Showcase" class="img-fluid">
+                <div class="position-absolute top-0 end-0 m-3">
+                  <span class="badge bg-success text-white px-2 py-1 shadow-sm"><i class="bi bi-fire me-1"></i>Trending Hub</span>
+                </div>
+              </div>
+              <div class="p-3 bg-white">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <span class="badge badge-anime badge-category">Featured Showcase</span>
+                  <span class="text-warning small fw-bold"><i class="bi bi-star-fill me-1"></i>9.8 / 10</span>
+                </div>
+                <h5 class="text-dark fw-bold mb-1">Attack on Titan: The Final Chapters</h5>
+                <p class="text-muted small mb-0">Experience the monumental climax of humanity's survival saga.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. CATEGORIES SECTION (8 CATEGORIES)
+         ======================================================================= -->
+    <section class="py-5" id="categoriesSection">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h6 class="text-success text-uppercase fw-bold letter-spacing-1 mb-1">Browse Universes</h6>
+            <h2 class="fw-bold text-dark mb-0">Explore Categories</h2>
+          </div>
+          <p class="text-muted mb-0 small">Select a fandom to view dedicated releases, characters & articles</p>
+        </div>
+
+        <div class="row g-4" id="homeCategoriesGrid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. TRENDING / POPULAR CONTENT SECTION (Soft Mint Highlight)
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--fanhub-bg-surface-alt); border-top: 1px solid var(--fanhub-border); border-bottom: 1px solid var(--fanhub-border);">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h6 class="text-success text-uppercase fw-bold letter-spacing-1 mb-1">What's Hot</h6>
+            <h2 class="fw-bold text-dark mb-0">Trending Now</h2>
+          </div>
+          <a href="explore.html" class="btn btn-sm btn-surface">View All Content <i class="bi bi-arrow-right ms-1 text-success"></i></a>
+        </div>
+
+        <div class="row g-4" id="trendingCardsGrid">
+          <!-- Populated by JavaScript with 8 top content cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. POPULAR CHARACTERS PREVIEW
+         ======================================================================= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h6 class="text-success text-uppercase fw-bold letter-spacing-1 mb-1">Heroes & Legends</h6>
+            <h2 class="fw-bold text-dark mb-0">Popular Characters</h2>
+          </div>
+          <a href="characters.html" class="btn btn-sm btn-surface">Browse All Characters <i class="bi bi-arrow-right ms-1 text-success"></i></a>
+        </div>
+
+        <div class="row g-4" id="homeCharactersGrid">
+          <!-- Populated with 4 featured character cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. FEATURED ARTICLES PREVIEW
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--fanhub-bg-surface-alt); border-top: 1px solid var(--fanhub-border); border-bottom: 1px solid var(--fanhub-border);">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h6 class="text-success text-uppercase fw-bold letter-spacing-1 mb-1">Fandom Journalism</h6>
+            <h2 class="fw-bold text-dark mb-0">Featured Articles & Lore</h2>
+          </div>
+          <a href="articles.html" class="btn btn-sm btn-surface">All Articles <i class="bi bi-arrow-right ms-1 text-success"></i></a>
+        </div>
+
+        <div class="row g-4" id="homeArticlesGrid">
+          <!-- Populated with 3 featured article cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. MEDIA & EVENTS SPOTLIGHT (Green & White Dual Banners)
+         ======================================================================= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Media Center Card -->
+          <div class="col-lg-6">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column justify-content-between shadow-sm" style="background: linear-gradient(135deg, #ffffff, #ecfdf5); border: 1.5px solid #a7f3d0;">
+              <div>
+                <div class="badge bg-success mb-2">Media Center</div>
+                <h3 class="fw-bold text-dark">Trailers, Soundtracks & Wallpapers</h3>
+                <p class="text-muted">Listen to chill lo-fi fandom tracks with our native HTML5 audio player or stream game announcement trailers.</p>
+              </div>
+              <div class="pt-3">
+                <a href="media.html" class="btn btn-brand">Open Media Center <i class="bi bi-play-circle ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Events Card -->
+          <div class="col-lg-6">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column justify-content-between shadow-sm" style="background: linear-gradient(135deg, #ffffff, #f0fdf4); border: 1.5px solid #bbf7d0;">
+              <div>
+                <div class="badge bg-dark mb-2">Convention Calendar</div>
+                <h3 class="fw-bold text-dark">Upcoming Events & Expos</h3>
+                <p class="text-muted">Discover pop culture conventions in Karachi, Lahore, Tokyo, New York, and London. Never miss a cosplay runway.</p>
+              </div>
+              <div class="pt-3">
+                <a href="events.html" class="btn btn-surface">View Event Schedule <i class="bi bi-calendar-event ms-1 text-success"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. MERCHANDISE SHOWCASE PREVIEW
+         ======================================================================= -->
+    <section class="py-5" style="background-color: var(--fanhub-bg-surface-alt); border-top: 1px solid var(--fanhub-border); border-bottom: 1px solid var(--fanhub-border);">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+          <div>
+            <h6 class="text-success text-uppercase fw-bold letter-spacing-1 mb-1">Collector's Corner</h6>
+            <h2 class="fw-bold text-dark mb-0">Merchandise Showcase</h2>
+          </div>
+          <a href="merchandise.html" class="btn btn-sm btn-surface">Explore Showcase <i class="bi bi-arrow-right ms-1 text-success"></i></a>
+        </div>
+        <p class="text-muted small mb-4">
+          <i class="bi bi-info-circle text-success me-1"></i>Discovery showcase only. Discover limited edition figures, wearable cosplay kits, and collectibles without purchase barriers.
+        </p>
+
+        <div class="row g-4" id="homeMerchGrid">
+          <!-- Populated with 4 merchandise showcase cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. VISUAL SITE MAP (Clean White Container)
+         ======================================================================= -->
+    <section class="py-5">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="fw-bold text-dark mb-0"><i class="bi bi-diagram-3 text-success me-2"></i>Platform Architecture & Site Map</h5>
+          <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">Complete Public Sitemap</span>
+        </div>
+        
+        <div class="sitemap-box">
+          <pre class="m-0 text-dark" style="font-family: inherit;">
+<a href="index.html">Fan Hub Plus (Home)</a>
+├── <a href="explore.html">Explore (Search, Filters & Sorting)</a>
+├── <a href="#categoriesSection">Categories</a>
+│   ├── <a href="explore.html?category=anime">Anime</a>
+│   ├── <a href="explore.html?category=gaming">Gaming</a>
+│   ├── <a href="explore.html?category=movies">Movies</a>
+│   ├── <a href="explore.html?category=tv">TV Shows</a>
+│   ├── <a href="explore.html?category=kpop">K-Pop</a>
+│   ├── <a href="explore.html?category=comics">Comics</a>
+│   ├── <a href="explore.html?category=manga">Manga</a>
+│   └── <a href="explore.html?category=cosplay">Cosplay</a>
+├── <a href="characters.html">Characters (Profiles & Lore)</a>
+├── <a href="articles.html">Articles (Featured Fandom Journalism)</a>
+├── <a href="media.html">Media Center (Trailers, Audio & Wallpapers)</a>
+├── <a href="events.html">Events (Convention Schedule & City Filters)</a>
+├── <a href="merchandise.html">Merchandise (Discovery Showcase)</a>
+├── <a href="bookmarks.html">Bookmarks (Local Storage Saved Items)</a>
+└── <a href="profile.html">Profile (User Preferences & Recent History)</a>
+          </pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       10. PROFESSIONAL FOOTER (Rich Deep Emerald Green with Crisp White Text)
+       ========================================================================= -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand mb-3 d-inline-flex text-white" href="index.html">
+            <i class="bi bi-compass-fill text-white"></i>
+            <span class="text-white">Fan Hub</span>
+            <span class="brand-badge" style="background: #ffffff; color: #064e3b;">Plus</span>
+          </a>
+          <p class="small pe-lg-4" style="color: #a7f3d0;">
+            Fan Hub Plus is the premier public fandom discovery platform uniting fans across Anime, Gaming, Movies, TV, K-Pop, Comics, Manga, and Cosplay. Built as a clean, responsive frontend prototype in Green & White.
+          </p>
+          <div class="d-flex gap-3 fs-5 mt-3">
+            <a href="#" class="text-white" aria-label="Discord"><i class="bi bi-discord"></i></a>
+            <a href="#" class="text-white" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-white" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Explore -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Explore</h6>
+          <ul class="footer-links">
+            <li><a href="explore.html?category=anime">Anime</a></li>
+            <li><a href="explore.html?category=gaming">Gaming</a></li>
+            <li><a href="explore.html?category=movies">Movies</a></li>
+            <li><a href="explore.html?category=tv">TV Shows</a></li>
+            <li><a href="explore.html">All Content</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Community -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Community</h6>
+          <ul class="footer-links">
+            <li><a href="explore.html?category=comics">Comics</a></li>
+            <li><a href="explore.html?category=manga">Manga</a></li>
+            <li><a href="explore.html?category=kpop">K-Pop</a></li>
+            <li><a href="explore.html?category=cosplay">Cosplay</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Platform -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Hub Features</h6>
+          <ul class="footer-links">
+            <li><a href="events.html">Upcoming Events</a></li>
+            <li><a href="media.html">Media Center</a></li>
+            <li><a href="merchandise.html">Merch Showcase</a></li>
+            <li><a href="bookmarks.html">My Bookmarks</a></li>
+            <li><a href="profile.html">User Profile</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Support -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6>Support</h6>
+          <ul class="footer-links">
+            <li><a href="#" onclick="alert('Fan Hub Plus is a frontend prototype built with Bootstrap 5 and vanilla JavaScript.'); return false;">FAQ</a></li>
+            <li><a href="#" onclick="alert('Thank you for testing the Fan Hub Plus prototype! Contact: student@fanhub.local'); return false;">Feedback</a></li>
+            <li><a href="#" onclick="alert('Contact the student developer team at info@fanhubplus.demo'); return false;">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 border-top border-success border-opacity-25 d-flex flex-wrap justify-content-between align-items-center small" style="color: #a7f3d0;">
+        <p class="mb-0">© 2026 Fan Hub Plus. All rights reserved. Green & White Modern Theme.</p>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <span>Student UI Prototype</span>
+          <span>•</span>
+          <span>No Backend Required</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main Data & Logic JS -->
+  <script src="js/main.js"></script>
+  <!-- Pre-Scripted FAQ Chatbot JS -->
+  <script src="js/chatbot.js"></script>
+
+  <!-- Homepage Dynamic Populator Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Render 8 Category Cards
+      const catContainer = document.getElementById("homeCategoriesGrid");
+      if (catContainer && FANHUB_DATA.categories) {
+        catContainer.innerHTML = FANHUB_DATA.categories.map(cat => `
+          <div class="col-6 col-md-4 col-lg-3">
+            <div class="category-card">
+              <div class="cat-img-box">
+                <img src="${cat.image}" alt="${cat.name}" loading="lazy">
+                <div class="category-overlay"></div>
+              </div>
+              <div class="cat-content">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <h5 class="fw-bold text-dark mb-0">${cat.name}</h5>
+                  <span class="badge ${cat.badgeClass} badge-category">${cat.count.split('+')[0]}</span>
+                </div>
+                <p class="text-muted small mb-3" style="min-height: 40px;">${cat.desc}</p>
+                <a href="explore.html?category=${cat.id}" class="btn btn-sm btn-surface w-100">
+                  Explore ${cat.name} <i class="bi bi-chevron-right ms-1 text-success"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // 2. Render 8 Trending Content Cards
+      const trendingContainer = document.getElementById("trendingCardsGrid");
+      if (trendingContainer && FANHUB_DATA.content) {
+        const trendingItems = FANHUB_DATA.content.slice(0, 8);
+        trendingContainer.innerHTML = trendingItems.map(item => createContentCardHTML(item)).join("");
+      }
+
+      // 3. Render 4 Featured Characters
+      const charsContainer = document.getElementById("homeCharactersGrid");
+      if (charsContainer && FANHUB_DATA.characters) {
+        const topChars = FANHUB_DATA.characters.slice(0, 4);
+        charsContainer.innerHTML = topChars.map(char => `
+          <div class="col-sm-6 col-lg-3">
+            <div class="fanhub-card h-100">
+              <div class="card-img-wrapper portrait">
+                <img src="${char.image}" alt="${char.name}" loading="lazy">
+                <div class="position-absolute top-0 start-0 m-2">
+                  <span class="badge ${char.badgeClass} badge-category">${char.categoryId}</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title mb-1">${char.name}</h5>
+                <div class="text-success small fw-bold mb-2">${char.role}</div>
+                <p class="card-text small">${char.description}</p>
+                <div class="mt-auto pt-2 border-top border-light-subtle">
+                  <a href="characters.html" class="btn btn-sm btn-surface w-100">
+                    View Profile <i class="bi bi-person-badge ms-1 text-success"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // 4. Render 3 Featured Articles
+      const articlesContainer = document.getElementById("homeArticlesGrid");
+      if (articlesContainer && FANHUB_DATA.articles) {
+        const topArticles = FANHUB_DATA.articles.slice(0, 3);
+        articlesContainer.innerHTML = topArticles.map(art => `
+          <div class="col-md-4">
+            <div class="fanhub-card h-100">
+              <div class="card-img-wrapper">
+                <img src="${art.image}" alt="${art.title}" loading="lazy">
+                <div class="position-absolute top-0 start-0 m-2">
+                  <span class="badge ${art.badgeClass} badge-category">${art.category}</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between text-muted small mb-2">
+                  <span><i class="bi bi-calendar3 me-1 text-success"></i>${art.date}</span>
+                  <span><i class="bi bi-clock me-1 text-success"></i>${art.readTime}</span>
+                </div>
+                <h5 class="card-title">${art.title}</h5>
+                <p class="card-text small">${art.summary}</p>
+                <div class="mt-auto pt-2 border-top border-light-subtle">
+                  <a href="articles.html" class="text-success small fw-bold text-decoration-none">
+                    Read Full Story <i class="bi bi-arrow-right ms-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // 5. Render 4 Merchandise Cards
+      const merchContainer = document.getElementById("homeMerchGrid");
+      if (merchContainer && FANHUB_DATA.merchandise) {
+        const topMerch = FANHUB_DATA.merchandise.slice(0, 4);
+        merchContainer.innerHTML = topMerch.map(m => `
+          <div class="col-sm-6 col-lg-3">
+            <div class="fanhub-card h-100">
+              <div class="card-img-wrapper">
+                <img src="${m.image}" alt="${m.name}" loading="lazy">
+                <div class="position-absolute top-0 start-0 m-2">
+                  <span class="badge ${m.tagClass} small">${m.tag}</span>
+                </div>
+                <div class="position-absolute bottom-0 start-0 m-2">
+                  <span class="badge bg-white text-dark shadow-sm small">${m.fandom}</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fs-6">${m.name}</h5>
+                <p class="card-text small">${m.description}</p>
+                <div class="mt-auto pt-2 border-top border-light-subtle">
+                  <a href="merchandise.html" class="btn btn-sm btn-surface w-100">
+                    View Details <i class="bi bi-box-arrow-up-right ms-1 text-success"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Sync bookmarks
+      BookmarkManager.syncButtonStates();
+    });
+  </script>
+</body>
+</html>

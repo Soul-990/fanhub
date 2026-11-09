@@ -1,0 +1,62 @@
+{
+  "faqData": {
+    "What is Fan Hub Plus?":
+      "Fan Hub Plus is a central discovery hub for fans to explore Anime, Gaming, Movies, TV Shows, K-Pop, Comics, Manga, and Cosplay all in one place!",
+
+    "What categories are available?":
+      "We feature 8 major fandom categories: Anime, Gaming, Movies, TV Shows, K-Pop, Comics, Manga, and Cosplay. Check out the 'Categories' section on the homepage or Explore page!",
+
+    "How do I search?":
+      "You can click the search bar in the top navbar or use the search box on the Explore page. Typing keywords like 'Attack', 'Cyberpunk', or 'Gojo' instantly filters content.",
+
+    "How do I bookmark content?":
+      "Click the bookmark icon on any card to save it to your browser's local storage. You can view all your saved favorites anytime on the 'Bookmarks' page!",
+
+    "Where can I find events?":
+      "Head to the 'Events' page in the top menu to view upcoming fandom conventions, cosplay expos, and tournaments across Karachi, Lahore, Tokyo, New York, and more.",
+
+    "Where can I find media?":
+      "Visit our 'Media' page to watch game trailers, listen to fandom soundtracks with our built-in audio player, and browse high-resolution cosplay galleries."
+  },
+
+  "keywordRules": [
+    {
+      "keywords": ["anime", "manga", "shonen", "otaku"],
+      "answer": "We have rich Anime & Manga coverage! Explore titles like 'Attack on Titan', 'Jujutsu Kaisen', and 'Solo Leveling' under our Explore page."
+    },
+    {
+      "keywords": ["game", "gaming", "rpg", "esports"],
+      "answer": "Looking for gaming? Check out our showcases for 'Cyberpunk 2077: Phantom Liberty' and 'Elden Ring: Shadow of the Erdtree' on the Explore and Media pages!"
+    },
+    {
+      "keywords": ["movie", "movies", "film", "cinema"],
+      "answer": "In Movies, discover hit releases like 'Spider-Man: Across the Spider-Verse' and 'Oppenheimer' with trailers in our Media Center."
+    },
+    {
+      "keywords": ["event", "events", "con", "convention", "karachi", "lahore"],
+      "answer": "You can find local and global fan conventions on our Events page, including events in Karachi, Lahore, Islamabad, Tokyo, and London!"
+    },
+    {
+      "keywords": ["bookmark", "save", "favorites"],
+      "answer": "Bookmark any title using the bookmark icon on cards. You can review all saved items anytime on the 'Bookmarks' page!"
+    },
+    {
+      "keywords": ["search", "find", "filter"],
+      "answer": "Use the top navbar search bar or visit the 'Explore' page to filter by category, content type, release year, or popularity!"
+    },
+    {
+      "keywords": ["category", "categories", "fandom"],
+      "answer": "Fan Hub Plus covers 8 categories: Anime, Gaming, Movies, TV Shows, K-Pop, Comics, Manga, and Cosplay. Check them out on our homepage!"
+    },
+    {
+      "keywords": ["merch", "merchandise", "buy", "store", "figure"],
+      "answer": "Check our Merchandise showcase to browse collectible figures, replicas, and cosplay gear. Note: this is a discovery showcase only (no shopping cart/checkout)."
+    },
+    {
+      "keywords": ["character", "characters", "hero", "gojo"],
+      "answer": "Discover iconic heroes and sorcerers on the 'Characters' page, featuring profiles for Gojo, Geralt, Miles Morales, and more!"
+    }
+  ],
+
+  "fallbackAnswer": "I\u2019m a simple Fan Helper, so I can only answer questions about this website and its main features."
+}

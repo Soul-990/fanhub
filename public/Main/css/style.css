@@ -1,0 +1,760 @@
+/* ==========================================================================
+   Fan Hub Plus - Green & White Modern Theme
+   Designed for: Clean, vibrant, polished fandom discovery website
+   Built with: Bootstrap 5 (CDN) + Custom Green & White Theme System
+   ========================================================================== */
+
+/* Root Variables for Consistent Green & White Theme */
+:root {
+  --fanhub-bg-main: #f8fafc;             /* Crisp clean off-white background */
+  --fanhub-bg-surface: #ffffff;          /* Pure white card & surface */
+  --fanhub-bg-surface-alt: #f0fdf4;      /* Soft mint-white highlight background */
+  --fanhub-bg-card-hover: #ffffff;       /* Card hover state */
+  
+  --fanhub-primary: #059669;             /* Vibrant Emerald / Jade Green */
+  --fanhub-primary-hover: #047857;       /* Deep Green Button Hover */
+  --fanhub-primary-light: #10b981;       /* Mint Green Accent */
+  --fanhub-primary-subtle: #ecfdf5;      /* Ultra-soft pastel green tint */
+  --fanhub-primary-border: rgba(5, 150, 105, 0.25);
+  
+  --fanhub-secondary: #0d9488;           /* Teal secondary */
+  --fanhub-accent-lime: #16a34a;         /* Vibrant Green Accent */
+  
+  --fanhub-border: #e2e8f0;              /* Crisp subtle light border */
+  --fanhub-border-hover: #a7f3d0;        /* Light emerald border on hover */
+  
+  --fanhub-text-main: #0f172a;           /* Deep slate heading & body text */
+  --fanhub-text-muted: #64748b;          /* High readability muted secondary text */
+  --fanhub-text-subtle: #94a3b8;         /* Subtle tertiary text */
+  
+  --fanhub-font-stack: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fanhub-radius: 12px;
+  --fanhub-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --fanhub-shadow-md: 0 4px 16px -2px rgba(16, 185, 129, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  --fanhub-shadow-lg: 0 12px 28px -4px rgba(5, 150, 105, 0.14), 0 6px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Global resets & typography */
+body {
+  background-color: var(--fanhub-bg-main);
+  color: var(--fanhub-text-main);
+  font-family: var(--fanhub-font-stack);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fanhub-text-main);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--fanhub-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--fanhub-primary-hover);
+}
+
+/* Custom Scrollbar in Green & White Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fanhub-primary);
+}
+
+/* --------------------------------------------------------------------------
+   NAVBAR (Crisp White with Emerald Accents)
+   -------------------------------------------------------------------------- */
+.navbar-custom {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--fanhub-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  padding: 0.75rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-size: 1.45rem;
+  color: #0f172a !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-brand .brand-badge {
+  background: linear-gradient(135deg, var(--fanhub-primary), var(--fanhub-primary-light));
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  color: #475569 !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--fanhub-primary) !important;
+  background-color: var(--fanhub-primary-subtle);
+}
+
+.nav-link.active {
+  color: var(--fanhub-primary) !important;
+  background-color: var(--fanhub-primary-subtle);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   BUTTONS & BADGES
+   -------------------------------------------------------------------------- */
+.btn-brand {
+  background-color: var(--fanhub-primary);
+  border-color: var(--fanhub-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.25);
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--fanhub-primary-hover);
+  border-color: var(--fanhub-primary-hover);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.btn-brand-outline {
+  background-color: transparent;
+  border: 1.5px solid var(--fanhub-primary);
+  color: var(--fanhub-primary);
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.btn-brand-outline:hover {
+  background-color: var(--fanhub-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.btn-surface {
+  background-color: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  color: #334155;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  box-shadow: var(--fanhub-shadow-sm);
+}
+
+.btn-surface:hover {
+  background-color: var(--fanhub-primary-subtle);
+  border-color: var(--fanhub-primary);
+  color: var(--fanhub-primary-hover);
+}
+
+/* Fandom Category Badges (Clean Pastel Tints on White) */
+.badge-category {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.badge-anime   { background-color: #fef2f2; color: #dc2626; border: 1px solid #fecaca; }
+.badge-gaming  { background-color: #ecfdf5; color: #059669; border: 1px solid #a7f3d0; }
+.badge-movies  { background-color: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.badge-tv      { background-color: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+.badge-kpop    { background-color: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; }
+.badge-comics  { background-color: #faf5ff; color: #7c3aed; border: 1px solid #ddd6fe; }
+.badge-manga   { background-color: #fff7ed; color: #ea580c; border: 1px solid #fed7aa; }
+.badge-cosplay { background-color: #f0fdfa; color: #0d9488; border: 1px solid #99f6e4; }
+
+/* --------------------------------------------------------------------------
+   CARDS & SURFACES
+   -------------------------------------------------------------------------- */
+.fanhub-card {
+  background-color: var(--fanhub-bg-surface);
+  border: 1px solid var(--fanhub-border);
+  border-radius: var(--fanhub-radius);
+  overflow: hidden;
+  box-shadow: var(--fanhub-shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fanhub-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--fanhub-border-hover);
+  box-shadow: var(--fanhub-shadow-lg);
+}
+
+.fanhub-card .card-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background-color: #e2e8f0;
+}
+
+.fanhub-card .card-img-wrapper.portrait {
+  aspect-ratio: 3 / 4;
+}
+
+.fanhub-card .card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.fanhub-card:hover .card-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.fanhub-card .card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fanhub-card .card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--fanhub-text-main);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.fanhub-card .card-text {
+  color: var(--fanhub-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* Category Grid Card (Green & White) */
+.category-card {
+  position: relative;
+  border-radius: var(--fanhub-radius);
+  overflow: hidden;
+  border: 1px solid var(--fanhub-border);
+  background-color: var(--fanhub-bg-surface);
+  box-shadow: var(--fanhub-shadow-md);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--fanhub-primary);
+  box-shadow: var(--fanhub-shadow-lg);
+}
+
+.category-card .cat-img-box {
+  height: 140px;
+  overflow: hidden;
+  position: relative;
+}
+
+.category-card .cat-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .cat-img-box img {
+  transform: scale(1.06);
+}
+
+.category-card .category-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.category-card .cat-content {
+  padding: 1rem;
+  position: relative;
+}
+
+/* Bookmark Round Button */
+.btn-bookmark {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--fanhub-border);
+  color: #64748b;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.btn-bookmark:hover {
+  background: var(--fanhub-primary-subtle);
+  color: var(--fanhub-primary);
+  border-color: var(--fanhub-primary);
+  transform: scale(1.08);
+}
+
+.btn-bookmark.bookmarked {
+  background: var(--fanhub-primary);
+  color: #ffffff;
+  border-color: var(--fanhub-primary);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   HERO SECTION (Vibrant Green & White)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 4.5rem 0 4rem;
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.08) 0%, transparent 45%),
+              linear-gradient(180deg, #ecfdf5 0%, var(--fanhub-bg-main) 100%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: #0f172a;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--fanhub-text-muted);
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.hero-card-preview {
+  background: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  border-radius: 16px;
+  padding: 0.85rem;
+  box-shadow: var(--fanhub-shadow-lg);
+}
+
+.hero-card-preview img {
+  border-radius: 12px;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   GLOBAL SEARCH BAR / MODAL
+   -------------------------------------------------------------------------- */
+.search-input-box {
+  background-color: #f1f5f9;
+  border: 1px solid var(--fanhub-border);
+  color: #0f172a;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.search-input-box:focus {
+  background-color: #ffffff;
+  border-color: var(--fanhub-primary);
+  color: #0f172a;
+  box-shadow: 0 0 0 0.25rem rgba(5, 150, 105, 0.18);
+}
+
+.search-input-box::placeholder {
+  color: #94a3b8;
+}
+
+.search-modal-content {
+  background-color: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+.search-results-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.search-item-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s ease;
+  text-decoration: none;
+  color: var(--fanhub-text-main);
+}
+
+.search-item-row:hover {
+  background-color: var(--fanhub-primary-subtle);
+  color: var(--fanhub-primary-hover);
+}
+
+/* --------------------------------------------------------------------------
+   FILTER & CONTROLS UI
+   -------------------------------------------------------------------------- */
+.filter-card {
+  background-color: var(--fanhub-bg-surface);
+  border: 1px solid var(--fanhub-border);
+  border-radius: var(--fanhub-radius);
+  padding: 1.25rem;
+  box-shadow: var(--fanhub-shadow-md);
+}
+
+.form-select-custom,
+.form-control-custom {
+  background-color: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  color: #0f172a;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-select-custom:focus,
+.form-control-custom:focus {
+  background-color: #ffffff;
+  border-color: var(--fanhub-primary);
+  color: #0f172a;
+  box-shadow: 0 0 0 0.2rem rgba(5, 150, 105, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   SITE MAP TREE VIEW (Green & White)
+   -------------------------------------------------------------------------- */
+.sitemap-box {
+  background-color: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  border-radius: var(--fanhub-radius);
+  padding: 1.5rem;
+  box-shadow: var(--fanhub-shadow-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.sitemap-box a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sitemap-box a:hover {
+  text-decoration: underline;
+  color: #047857;
+}
+
+/* --------------------------------------------------------------------------
+   PRE-SCRIPTED FAQ CHATBOT (FAN HELPER) - Green & White
+   -------------------------------------------------------------------------- */
+.chatbot-toggle-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1050;
+  background: linear-gradient(135deg, var(--fanhub-primary), var(--fanhub-primary-hover));
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.35rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.35);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chatbot-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(5, 150, 105, 0.45);
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  width: 360px;
+  max-width: calc(100vw - 48px);
+  height: 480px;
+  max-height: calc(100vh - 120px);
+  background-color: #ffffff;
+  border: 1px solid var(--fanhub-border);
+  border-radius: 16px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+  z-index: 1050;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatbot-container.active {
+  display: flex;
+}
+
+.chatbot-header {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #ffffff;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background-color: #f8fafc;
+}
+
+.chat-bubble {
+  max-width: 85%;
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.chat-bubble.bot {
+  background-color: #ffffff;
+  color: #1e293b;
+  align-self: flex-start;
+  border: 1px solid #e2e8f0;
+  border-bottom-left-radius: 2px;
+  box-shadow: var(--fanhub-shadow-sm);
+}
+
+.chat-bubble.user {
+  background-color: var(--fanhub-primary);
+  color: #ffffff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.quick-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.quick-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: var(--fanhub-shadow-sm);
+}
+
+.quick-btn:hover {
+  background-color: var(--fanhub-primary);
+  color: #ffffff;
+  border-color: var(--fanhub-primary);
+}
+
+.chatbot-footer {
+  padding: 0.75rem 0.85rem;
+  border-top: 1px solid var(--fanhub-border);
+  background-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER (Deep Forest Emerald Green with Crisp White Text)
+   -------------------------------------------------------------------------- */
+.footer-custom {
+  background-color: #064e3b;             /* Deep rich emerald forest */
+  color: #a7f3d0;                         /* Soft light emerald secondary */
+  border-top: 3px solid var(--fanhub-primary-light);
+  padding: 3.5rem 0 2rem;
+}
+
+.footer-custom h6 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 1.15rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.55rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-bottom-text {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Toast container positioning */
+.toast-container {
+  z-index: 1090;
+}
+
+/* ==========================================================================
+   Accessibility & Dark Mode Support
+   ========================================================================== */
+html.font-size-sm { font-size: 14px; }
+html.font-size-md { font-size: 16px; }
+html.font-size-lg { font-size: 18px; }
+
+[data-theme="dark"] {
+  --fanhub-bg-main: #0b1319;
+  --fanhub-bg-surface: #131f24;
+  --fanhub-bg-surface-alt: #0a251b;
+  --fanhub-bg-card-hover: #17272e;
+  --fanhub-text-main: #e2e8f0;
+  --fanhub-text-muted: #94a3b8;
+  --fanhub-text-subtle: #64748b;
+  --fanhub-border: #1e3a34;
+  --fanhub-border-hover: #10b981;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--fanhub-bg-main);
+  color: var(--fanhub-text-main);
+}
+
+[data-theme="dark"] .navbar-custom {
+  background-color: #131f24;
+  border-bottom: 1px solid #1e3a34;
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .nav-link,
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6,
+[data-theme="dark"] .text-dark {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: #131f24 !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #0d181c !important;
+}
+
+[data-theme="dark"] .border,
+[data-theme="dark"] .border-top,
+[data-theme="dark"] .border-bottom {
+  border-color: #1e3a34 !important;
+}
+
+[data-theme="dark"] .fanhub-card,
+[data-theme="dark"] .filter-card,
+[data-theme="dark"] .card,
+[data-theme="dark"] .modal-content,
+[data-theme="dark"] .sitemap-box {
+  background-color: #131f24;
+  border-color: #1e3a34;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+  background-color: #0b1319;
+  border-color: #1e3a34;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .btn-surface {
+  background-color: #1a2a30;
+  border-color: #1e3a34;
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .btn-surface:hover {
+  background-color: #064e3b;
+  border-color: #059669;
+  color: #ffffff;
+}
+
